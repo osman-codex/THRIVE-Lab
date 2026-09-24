@@ -1,0 +1,139 @@
+/* ================================================
+   What We Do page: editorial layout with gold numbers
+   ================================================ */
+
+.hero {
+  background:
+    radial-gradient(700px 320px at 12% -20%, rgba(255, 179, 0, 0.12), transparent 60%),
+    var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3xl) 0;
+}
+
+.heroKicker {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-strong);
+  margin-bottom: var(--space-sm);
+}
+
+.heroTitle {
+  max-width: 760px;
+  margin-bottom: var(--space-md);
+}
+
+.heroSubtitle {
+  max-width: 640px;
+  font-size: var(--text-lg);
+  margin: 0;
+}
+
+/* --- Focus areas: two column numbered list --- */
+.areasGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.areaCard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: var(--space-lg);
+  padding: var(--space-xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition: border-color var(--transition-base);
+}
+
+.areaCard:hover {
+  border-color: var(--color-primary-dark);
+}
+
+.areaNum {
+  grid-row: 1;
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.areaTitle {
+  grid-row: 1;
+  font-size: var(--text-lg);
+  align-self: center;
+}
+
+.areaDescription {
+  grid-column: 2;
+  margin: var(--space-sm) 0 0;
+  font-size: var(--text-sm);
+}
+
+/* --- Approach pillars --- */
+.approachGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.approachCard {
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+.approachTitle {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.approachDescription {
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+/* --- Project cards grid --- */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+  .areasGrid,
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .approachGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .approachGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .areaCard {
+    grid-template-columns: 1fr;
+  }
+
+  .areaNum {
+    grid-row: auto;
+  }
+
+  .areaTitle {
+    grid-row: auto;
+  }
+
+  .areaDescription {
+    grid-column: 1;
+  }
+}

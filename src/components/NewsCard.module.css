@@ -1,0 +1,134 @@
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  border-color: var(--color-primary-dark);
+}
+
+.mediaWrapper {
+  position: relative;
+  background: var(--color-surface-alt);
+}
+
+.image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  flex: 1;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+}
+
+.badge_news {
+  background: var(--color-primary-soft);
+  color: var(--color-accent-strong);
+  border: 1px solid rgba(255, 179, 0, 0.4);
+}
+
+.badge_event {
+  background: var(--color-ink);
+  color: var(--color-primary);
+}
+
+.badge_success-story {
+  background: var(--color-secondary-light);
+  color: var(--color-ink);
+}
+
+.badge_video {
+  background: var(--color-primary);
+  color: var(--color-ink);
+}
+
+.date {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.summary {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.details summary {
+  cursor: pointer;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent-strong);
+}
+
+.details summary:hover {
+  text-decoration: underline;
+}
+
+.details[open] summary {
+  margin-bottom: var(--space-xs);
+}
+
+.body {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.link {
+  align-self: flex-start;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent-strong);
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: var(--color-ink);
+}

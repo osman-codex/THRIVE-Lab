@@ -1,0 +1,553 @@
+/* ================================================
+   THRIVE Lab Global Styles
+   VCU Gold + black editorial design system,
+   inspired by clean academic lab sites.
+   ================================================ */
+
+/* --- Design Tokens --- */
+:root {
+  /* VCU brand: gold #FFB300 with black. Cool gray support tones. */
+  --color-primary: #ffb300;
+  --color-primary-light: #ffc633;
+  --color-primary-dark: #cc8f00;
+  --color-primary-soft: #fff7e0;
+
+  --color-ink: #111111;
+  --color-secondary: #1a1a1a;
+  --color-secondary-light: #e8e6e1;
+  --color-accent: #b8860b;
+  --color-accent-strong: #8a6d00;
+
+  /* Neutrals */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-alt: #faf9f6;
+  --color-border: #e5e2dc;
+  --color-text: #171717;
+  --color-text-muted: #55554f;
+  --color-text-inverse: #ffffff;
+
+  /* Spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Merriweather', Georgia, 'Times New Roman', serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Border radius: small radii for a crisp editorial look */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows: soft and minimal */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.08);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-soft: 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-spring: 600ms cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  /* Motion keyframes (shared, reduced-motion aware; see bottom of file) */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 72px;
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* --- Focus styles (accessibility) --- */
+:focus-visible {
+  outline: 3px solid var(--color-primary-dark);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Skip link --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-md);
+  z-index: 1000;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-ink);
+  color: var(--color-primary);
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* --- Layout utilities --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+.page-section {
+  padding-block: var(--space-3xl);
+}
+
+.page-section--alt {
+  background-color: var(--color-surface-alt);
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+/* --- Section heading (editorial: small gold kicker line + big serif) --- */
+.section-heading {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.section-heading__title {
+  margin-bottom: var(--space-sm);
+}
+
+.section-heading__accent {
+  display: inline-block;
+  width: 56px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-md);
+}
+
+.section-heading__subtitle {
+  max-width: 640px;
+  margin-inline: auto;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 0.8rem 1.6rem;
+  font-size: var(--text-base);
+  font-weight: 600;
+  line-height: 1;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-base), color var(--transition-base),
+    border-color var(--transition-base), transform var(--transition-fast), box-shadow var(--transition-base);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--primary {
+  background-color: var(--color-ink);
+  color: var(--color-primary);
+}
+
+.btn--primary:hover {
+  background-color: #000000;
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-ink);
+  color: var(--color-primary);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-ink);
+}
+
+.btn--small {
+  padding: 0.5rem 1rem;
+  font-size: var(--text-sm);
+}
+
+/* Solid gold button for dark sections */
+.btn--gold {
+  background-color: var(--color-primary);
+  color: var(--color-ink);
+}
+
+.btn--gold:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* Inverted (on dark backgrounds) */
+.btn--inverted {
+  background-color: var(--color-primary);
+  color: var(--color-ink);
+  border-color: var(--color-primary);
+}
+
+.btn--inverted:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+/* --- Cards: flat, hairline-border editorial cards --- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-ink);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Badge / tag --- */
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.7em;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary-soft);
+  color: var(--color-accent-strong);
+  border: 1px solid rgba(255, 179, 0, 0.4);
+}
+
+/* --- Form elements --- */
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  font-size: var(--text-sm);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: var(--text-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 0 0 3px rgba(255, 179, 0, 0.25);
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-input[aria-invalid='true'],
+.form-textarea[aria-invalid='true'] {
+  border-color: #b42318;
+}
+
+.form-error {
+  color: #b42318;
+  font-size: var(--text-sm);
+  margin-top: var(--space-xs);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+
+  .container {
+    padding-inline: var(--space-md);
+  }
+
+  .page-section {
+    padding-block: var(--space-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: var(--text-2xl); }
+  h2 { font-size: var(--text-xl); }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* --- Print --- */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* ================================================
+   Motion library
+   Gentle, calm animations. Elements with [data-animate]
+   reveal on scroll when JS is available; without JS the
+   content is simply visible (progressive enhancement).
+   ================================================ */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(14px, -18px) scale(1.05); }
+  66% { transform: translate(-12px, 10px) scale(0.97); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Scroll reveal (activated by MotionProvider client component) */
+.js [data-animate] {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.js [data-animate].is-visible {
+  animation: fade-up 0.7s var(--ease-out-soft) forwards;
+}
+
+.js [data-animate='fade'] {
+  transform: none;
+}
+
+.js [data-animate='fade'].is-visible {
+  animation-name: fade-in;
+}
+
+/* Staggered children: parent gets data-animate-group,
+   children reveal one after another. */
+.js [data-animate-group] > * {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.js [data-animate-group].is-visible > * {
+  animation: fade-up 0.7s var(--ease-out-soft) forwards;
+}
+
+.js [data-animate-group].is-visible > *:nth-child(1) { animation-delay: 0.05s; }
+.js [data-animate-group].is-visible > *:nth-child(2) { animation-delay: 0.15s; }
+.js [data-animate-group].is-visible > *:nth-child(3) { animation-delay: 0.25s; }
+.js [data-animate-group].is-visible > *:nth-child(4) { animation-delay: 0.35s; }
+.js [data-animate-group].is-visible > *:nth-child(5) { animation-delay: 0.45s; }
+.js [data-animate-group].is-visible > *:nth-child(6) { animation-delay: 0.55s; }
+.js [data-animate-group].is-visible > *:nth-child(7) { animation-delay: 0.65s; }
+.js [data-animate-group].is-visible > *:nth-child(8) { animation-delay: 0.75s; }
+
+/* Decorative soft gold blob for light sections */
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.18;
+  pointer-events: none;
+  animation: drift 16s ease-in-out infinite;
+  z-index: 0;
+}
+
+.hero-blob--slow {
+  animation-duration: 22s;
+}
+
+/* Soft shimmer for highlighted text (gold) */
+.shimmer-text {
+  background: linear-gradient(
+    100deg,
+    var(--color-primary-dark) 20%,
+    var(--color-primary) 40%,
+    var(--color-primary-dark) 60%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js [data-animate],
+  .js [data-animate-group] > * {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+
+  .hero-blob,
+  .shimmer-text {
+    animation: none !important;
+  }
+}
