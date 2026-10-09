@@ -1,0 +1,245 @@
+/* ============ Hero ============ */
+.hero {
+  background: var(--color-ink);
+  color: #ffffff;
+  padding-block: var(--space-4xl) var(--space-3xl);
+  border-bottom: 4px solid var(--color-primary);
+}
+
+.heroKicker {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  text-align: left;
+}
+
+.heroTitle {
+  color: #ffffff;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin-bottom: var(--space-md);
+}
+
+.heroSubtitle {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--text-lg);
+  margin-bottom: 0;
+  text-align: left;
+}
+
+/* ============ Prose blocks ============ */
+.prose {
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+.prose p {
+  font-size: var(--text-lg);
+}
+
+/* ============ Principles ============ */
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.principleCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.principleCard:hover {
+  border-color: var(--color-ink);
+  box-shadow: var(--shadow-md);
+}
+
+.principleTitle {
+  font-size: var(--text-base);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent-strong);
+  margin-bottom: var(--space-sm);
+}
+
+.principleText {
+  margin-bottom: 0;
+  font-size: var(--text-base);
+}
+
+/* ============ Domains ============ */
+.domainsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.domainCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.domainCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.domainTitle {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.domainText {
+  margin-bottom: 0;
+}
+
+/* ============ Where we work ============ */
+.whereGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.whereCard {
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl) var(--space-xl);
+}
+
+.whereFlag {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.whereTitle {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.whereText {
+  margin-bottom: 0;
+}
+
+.whereNote {
+  max-width: 820px;
+  margin: var(--space-2xl) auto 0;
+}
+
+/* ============ Training ============ */
+.trainingList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  max-width: 860px;
+  margin: var(--space-xl) auto 0;
+}
+
+.trainingItem {
+  padding: 0.45em 1em;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+/* ============ Leadership ============ */
+.leaderCard {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl);
+}
+
+.leaderPhotoWrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.leaderPhoto {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.leaderName {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-sm);
+}
+
+.leaderRole {
+  font-weight: 600;
+  color: var(--color-accent-strong);
+  margin-bottom: var(--space-xs);
+}
+
+.leaderAffiliation {
+  margin-bottom: var(--space-xs);
+}
+
+.leaderBio {
+  margin-top: var(--space-md);
+}
+
+.leaderLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.learnMore {
+  font-weight: 600;
+  color: var(--color-accent-strong);
+  transition: color var(--transition-fast);
+}
+
+.learnMore:hover {
+  color: var(--color-ink);
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 900px) {
+  .principlesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .leaderCard {
+    grid-template-columns: 1fr;
+    padding: var(--space-xl);
+  }
+
+  .leaderPhotoWrap {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .principlesGrid,
+  .domainsGrid,
+  .whereGrid {
+    grid-template-columns: 1fr;
+  }
+}

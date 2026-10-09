@@ -1,0 +1,82 @@
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  transition: border-color var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-primary-dark);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+}
+
+.citation {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+  font-style: italic;
+}
+
+.doi {
+  margin-bottom: var(--space-md);
+}
+
+.doi a {
+  font-size: var(--text-sm);
+  color: var(--color-accent-strong);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.doi a:hover {
+  color: var(--color-ink);
+  text-decoration: underline;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent-strong);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  margin-bottom: var(--space-md);
+}
+
+.toggleButton:hover {
+  color: var(--color-ink);
+  text-decoration: underline;
+}
+
+.abstract {
+  padding: var(--space-md);
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  border-left: 3px solid var(--color-primary);
+}
+
+.abstract p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
