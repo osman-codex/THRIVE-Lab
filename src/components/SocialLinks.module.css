@@ -1,0 +1,33 @@
+.list {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-ink);
+  color: var(--color-primary);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.link:hover {
+  background-color: var(--color-primary);
+  color: var(--color-ink);
+  transform: translateY(-2px);
+}
+
+.link:focus-visible {
+  outline: 3px solid var(--color-primary-dark);
+  outline-offset: 2px;
+}

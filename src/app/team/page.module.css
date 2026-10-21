@@ -1,0 +1,178 @@
+/* ================================================
+   Team page: light editorial layout
+   ================================================ */
+
+.hero {
+  background:
+    radial-gradient(700px 320px at 88% -20%, rgba(255, 179, 0, 0.12), transparent 60%),
+    var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3xl) 0;
+}
+
+.heroKicker {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-strong);
+  margin-bottom: var(--space-sm);
+}
+
+.heroTitle {
+  margin-bottom: var(--space-md);
+}
+
+.heroSubtitle {
+  max-width: 640px;
+  font-size: var(--text-lg);
+  margin: 0;
+}
+
+.teamGroup {
+  margin-bottom: var(--space-2xl);
+}
+
+.roleLabel {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  color: var(--color-ink);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+.roleLabel::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 3px;
+  background: var(--color-primary);
+  margin: var(--space-sm) auto 0;
+  border-radius: var(--radius-full);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-xl);
+}
+
+/* ============ Lab director ============ */
+.directorCard {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl);
+}
+
+.directorPhotoWrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.directorPhoto {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.directorName {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-sm);
+}
+
+.directorRole {
+  font-weight: 600;
+  color: var(--color-accent-strong);
+  margin-bottom: var(--space-xs);
+}
+
+.directorAffiliation {
+  margin-bottom: var(--space-xs);
+}
+
+.directorBio {
+  margin-top: var(--space-md);
+}
+
+.directorLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+/* ============ Past members ============ */
+.pastMembersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pastMemberCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: left;
+}
+
+.pastMemberName {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-xs);
+}
+
+.pastMemberRole {
+  margin: 0 0 var(--space-xs);
+  font-weight: 600;
+  color: var(--color-accent-strong);
+}
+
+.pastMemberInstitution {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: left;
+}
+
+.pastMemberCard a {
+  margin-top: var(--space-md);
+  margin-bottom: 0;
+}
+
+/* ============ Training ============ */
+.trainingNote {
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+.sectionCta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-2xl);
+}
+
+@media (max-width: 768px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .directorCard {
+    grid-template-columns: 1fr;
+    padding: var(--space-xl);
+  }
+
+  .directorPhotoWrap {
+    max-width: 280px;
+  }
+}
